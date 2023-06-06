@@ -44,9 +44,7 @@ messages = {('P', 'NP'): 'There exists an oracle w.r.t which P is not equal to N
            ('PPAD','BQP'): 'There exists an oracle relative to which PPAD is not contained in BQP',
             ('BQP','PPAD'):'There exists an oracle relative to which PPAD is not contained in BQP',
            ('PPP','PPAD'): 'There exists an oracle relative to which PPP is not contained in PPAD',
-            ('PPAD','PPP'):'There exists an oracle relative to which PPP is not contained in PPAD',
-            ('P#P','PSAPCE'):'Pspace contains P#P (P with a #P oracle)',
-           ('PSPACE','P#P'):'Pspace contains P#P (P with a #P oracle)'}
+            ('PPAD','PPP'):'There exists an oracle relative to which PPP is not contained in PPAD'}
 
 # Function to perform a depth-first search
 def dfs(graph, start, target, visited=None, path=None):
@@ -75,10 +73,10 @@ def shortest_path(graph, messages, start, target):
         start, target = target, start
     # If a path still doesn't exist, return an error message
     if path is None:
-        return f"No path exists between {start} and {target}"
+        return f"No relation exists between {start} and {target}"
     # Print the messages associated with each edge in the shortest path
     distance = len(path)-1 
-    output = f"Shortest path from {start} to {target}: {' -> '.join(path)}\n"
+    output = f"Shortest path from {start} to {target}: {' ⊆ '.join(path)}\n"
     for i in range(distance):
         edge = (path[i], path[i+1])
         if edge in messages:
