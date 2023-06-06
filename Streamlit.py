@@ -5,6 +5,7 @@
 
 
 import streamlit as st
+from IPython.display import Markdown
 
 # Directed acyclic graph of complexity classes
 graph = {
