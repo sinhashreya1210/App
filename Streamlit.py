@@ -75,9 +75,11 @@ def shortest_path(graph, messages, start, target):
     # If a path still doesn't exist, return an error message
     if path is None:
         return f"No relation exists between {start} and {target}"
+        Markdown('[Form](https://example.com)')
     # Print the messages associated with each edge in the shortest path
     distance = len(path)-1 
     output = f"Shortest path from {start} to {target}: {' ⊆ '.join(path)}\n"
+    Markdown('[Form](https://example.com)')
     for i in range(distance):
         edge = (path[i], path[i+1])
         if edge in messages:
