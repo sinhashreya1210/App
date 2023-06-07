@@ -5,6 +5,7 @@
 
 
 import streamlit as st
+import re
 
 # Directed acyclic graph of complexity classes
 graph = {
