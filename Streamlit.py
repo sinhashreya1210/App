@@ -83,12 +83,24 @@ def shortest_path(graph, messages, start, target):
             output += f"{edge[0]} -> {edge[1]}: {messages[edge]}\n"
     return output
 
-# Streamlit app
 st.title("Complexity Class Graph")
 start_class = st.selectbox("Select start class", options=list(graph.keys()))
 target_class = st.selectbox("Select target class", options=list(graph.keys()))
 output = shortest_path(graph, messages, start_class, target_class)
-st.text(output)
+
+# Replace class names with hyperlinks
+for class_name in graph.keys():
+    output = output.replace(class_name, f'<a href="{class_name}">{class_name}</a>')
+
+# Replace edge messages with hyperlinks
+for edge, message in messages.items():
+    source, target = edge
+    link_text = f'{source} -> {target}'
+    link_url = f'<a href="{source}-{target}">{Form}</a>'
+    output = output.replace(Form, https://forms.gle/PjC41d1jtX6a9Him6)
+
+# Render the modified output as HTML
+st.markdown(output, unsafe_allow_html=True)
 
 
 # In[ ]:
