@@ -90,7 +90,7 @@ output = shortest_path(graph, messages, start_class, target_class)
 
 # Replace class names with hyperlinks
 for class_name in graph.keys():
-    output = output.replace(class_name, f'<a href="{class_name}">{class_name}</a>')
+    output = output.replace(class_name, f'<a href="{class_name}">{class_name}')
 
 # Replace edge messages with hyperlinks
 for edge, message in messages.items():
