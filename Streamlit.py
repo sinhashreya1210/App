@@ -91,7 +91,7 @@ output = shortest_path(graph, messages, start_class, target_class)
 
 # Print the output with a hyperlink to a Google Form
 google_form_link = "https://docs.google.com/forms/d/e/1FAIpQLSfdJ4vR0gppBi1_TAnrezB0W_xUZpdk3w8yfrHOm4s63y-gXg/viewform?usp=sf_link"
-output_with_link = f"{output}\n\n[Click here to fill out the Google Form]({google_form_link})"
+output_with_link = f"{output}\n\n[Click here to suggest corrections.]({google_form_link})"
 st.markdown(output_with_link, unsafe_allow_html=True)
 
 
