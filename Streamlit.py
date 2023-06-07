@@ -77,11 +77,11 @@ def shortest_path(graph, messages, start, target):
         return f"No relation exists between {start} and {target}"
     # Print the messages associated with each edge in the shortest path
     distance = len(path)-1 
-    output = f"Shortest path from {start} to {target}: {' ⊆ '.join(path)} \n,"
+    output = f"Shortest path from {start} to {target}: {' ⊆ '.join(path)} \n"
     for i in range(distance):
         edge = (path[i], path[i+1])
         if edge in messages:
-            output += f"Oracle Sepration: {edge[0]} -> {edge[1]}: {messages[edge]}\n"
+            output += f"\n Oracle Sepration: {edge[0]} -> {edge[1]}: {messages[edge]}\n"
     return output
 # Streamlit app
 st.title("Complexity Class Graph")
