@@ -89,9 +89,6 @@ start_class = st.selectbox("Select start class", options=list(graph.keys()))
 target_class = st.selectbox("Select target class", options=list(graph.keys()))
 output = shortest_path(graph, messages, start_class, target_class)
 
-# Replace class names with hyperlinks
-for class_name in graph.keys():
-    output = re.sub(r'\b' + re.escape(class_name) + r'\b', f'<a href="{class_name}">{class_name}</a>', output)
 
 # Replace edge messages with hyperlinks
 for edge, message in messages.items():
