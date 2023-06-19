@@ -20,7 +20,7 @@ graph = {
     'PP': ['BQP', 'MA', 'coNP'],
     'PH': ['AM', 'coNP'],
     'Ppoly': ['BPP'],
-    'MA': ['BPP', 'NP']
+    'MA': ['BPP', 'NP'],
     'NP': ['P'],
     'P': ['NC'],
     'NC': ['L'],
