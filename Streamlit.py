@@ -15,16 +15,16 @@ graph = {
     'BQP': ['BPP'],
     'coNP': ['P'],
     'EXP': ['PSPACE'],
-    'PSPACE': ['P#P'],
-    'P#P': ['PH', 'PP'],
-    'PP': ['BQP', 'MA', 'coNP'],
-    'PH': ['AM', 'coNP'],
-    'Ppoly': ['BPP'],
+    'L': ['AC0'],
     'MA': ['BPP', 'NP'],
+    'NC': ['L'],
     'NP': ['P'],
     'P': ['NC'],
-    'NC': ['L'],
-    'L': ['AC0']
+    'PH': ['AM', 'coNP'],
+    'PP': ['BQP', 'MA', 'coNP'],
+    'Ppoly': ['BPP'],
+    'PSPACE': ['P#P'],
+    'P#P': ['PH', 'PP']    
 }
 
 # Dictionary to store the messages for each class
