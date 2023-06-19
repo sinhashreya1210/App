@@ -10,18 +10,18 @@ import re
 # Directed acyclic graph of complexity classes
 graph = {
     'ALL': ['EXP', 'Ppoly'],
+    'AM': ['SZK', 'MA'],
+    'BPP': ['P'],
+    'BQP': ['BPP'],
+    'coNP': ['P'],
     'EXP': ['PSPACE'],
     'PSPACE': ['P#P'],
     'P#P': ['PH', 'PP'],
     'PP': ['BQP', 'MA', 'coNP'],
     'PH': ['AM', 'coNP'],
-    'BQP': ['BPP'],
     'Ppoly': ['BPP'],
-    'AM': ['SZK', 'MA'],
-    'MA': ['BPP', 'NP'],
-    'coNP': ['P'],
+    'MA': ['BPP', 'NP']
     'NP': ['P'],
-    'BPP': ['P'],
     'P': ['NC'],
     'NC': ['L'],
     'L': ['AC0']
