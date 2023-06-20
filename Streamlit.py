@@ -22,7 +22,7 @@ conn.commit()
 
 # Function to fetch and store search history
 @st.cache(allow_output_mutation=True)
-def update_search_history(search_term):mnnn
+def update_search_history(search_term):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     c.execute("INSERT INTO search_history (search_term, timestamp) VALUES (?, ?)", (search_term, timestamp))
     conn.commit()
