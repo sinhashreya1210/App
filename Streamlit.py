@@ -6,6 +6,41 @@
 
 import streamlit as st
 import re
+import sqlite3
+from datetime import datetime
+
+# Connect to the SQLite database
+conn = sqlite3.connect('search_history.db')
+c = conn.cursor()
+
+# Create the search history table if it doesn't exist
+c.execute('''CREATE TABLE IF NOT EXISTS search_history
+             (id INTEGER PRIMARY KEY AUTOINCREMENT,
+             search_term TEXT,
+             timestamp TEXT)''')
+conn.commit()
+
+# Function to fetch and store search history
+@st.cache(allow_output_mutation=True)
+def update_search_history(search_term):mnnn
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    c.execute("INSERT INTO search_history (search_term, timestamp) VALUES (?, ?)", (search_term, timestamp))
+    conn.commit()
+    c.execute("SELECT * FROM search_history")
+    search_history = c.fetchall()
+    return search_history
+
+# Streamlit app
+def main():
+    st.title("Search History")
+    
+    # Search input
+    search_term = st.text_input("Enter a search term:")
+    
+    # Update search history and display
+    if st.button("Search"):
+        search_history = update_search_history(search_term)
+        st.table(search_history)
 
 # Directed acyclic graph of complexity classes
 graph = {
