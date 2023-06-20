@@ -31,16 +31,7 @@ def update_search_history(search_term):mnnn
     return search_history
 
 # Streamlit app
-def main():
-    st.title("Search History")
-    
-    # Search input
-    search_term = st.text_input("Enter a search term:")
-    
-    # Update search history and display
-    if st.button("Search"):
-        search_history = update_search_history(search_term)
-        st.table(search_history)
+
 
 # Directed acyclic graph of complexity classes
 graph = {
@@ -128,6 +119,17 @@ output = shortest_path(graph, messages, start_class, target_class)
 google_form_link = "https://docs.google.com/forms/d/e/1FAIpQLSfdJ4vR0gppBi1_TAnrezB0W_xUZpdk3w8yfrHOm4s63y-gXg/viewform?usp=sf_link"
 output_with_link = f"{output}\n\n[Click here to suggest corrections.]({google_form_link})"
 st.markdown(output_with_link, unsafe_allow_html=True)
+
+def main():
+    st.title("Search History")
+    
+    # Search input
+    search_term = st.text_input("Enter a search term:")
+    
+    # Update search history and display
+    if st.button("Search"):
+        search_history = update_search_history(search_term)
+        st.table(search_history)
 
 
 # In[ ]:
