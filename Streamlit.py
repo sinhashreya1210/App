@@ -99,7 +99,7 @@ st.markdown(output_with_link, unsafe_allow_html=True)
 import sqlite3
 from datetime import datetime
 
-# Connect to the SQLite database
+# Connect to the SQLite database #display it in frontend
 conn = sqlite3.connect('search_history.db')
 c = conn.cursor()
 
