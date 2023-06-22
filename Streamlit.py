@@ -69,7 +69,7 @@ def dfs(graph, start, target, visited=None, path=None):
 # Function to find the shortest path between two classes
 def shortest_path(graph, messages, start, target):
     # Find the shortest path using DFS
-    path = dfs(graph, target, start)
+    path = dfs(graph, start, target)
     # If no path exists, try swapping the start and target classes
     if path is None:
         path = dfs(graph, target, start)
