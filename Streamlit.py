@@ -76,7 +76,7 @@ def shortest_path(graph, messages, start, target):
         start, target = target, start
     # If a path still doesn't exist, return an error message
     if path is None:
-        return f"No relation exists between {start} and {target}"
+        return f"No known relation exists between {start} and {target}"
     path = path[::-1]
     # Print the messages associated with each edge in the shortest path
     distance = len(path)-1 
