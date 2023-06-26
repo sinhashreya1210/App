@@ -80,7 +80,7 @@ def shortest_path(graph, messages, start, target):
     path = path[::-1]
     # Print the messages associated with each edge in the shortest path
     distance = len(path)-1 
-    output = f"Shortest path from {target} to {start}: {'⊆'.join(path)} \n"
+    output = f"{target} is in {start}: {'⊆'.join(path)} \n"
     for i in range(distance):
         edge = (path[i], path[i+1])
         if edge in messages:
