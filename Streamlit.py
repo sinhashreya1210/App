@@ -87,14 +87,6 @@ def shortest_path(graph, messages, start, target):
             output += f"\n {edge[0]} -> {edge[1]}: {messages[edge]}\n"
     return output
 
-message = {('P'): 'abc',
-            ('NP'): 'ccd'}
-for i in range(distance):
-        edge = (path[i])
-        if edge in message:
-            output += f"\n {edge[0]} : {message[edge]}\n"
-    return output
-
 # Streamlit app
 st.title("Complexity Class Graph")
 start_class = st.selectbox("Select start class", options=list(graph.keys()))
